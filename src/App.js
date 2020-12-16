@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { getCanvasPosition } from './utils/formulas';
 import Canvas from './components/Canvas';
+import './components/img/aim.svg';
 
 class App extends Component {
   componentDidMount() {
@@ -27,7 +28,7 @@ class App extends Component {
 
   render() {
     return (
-      <Canvas
+      <Canvas 
         angle={this.props.angle}
         gameState={this.props.gameState}
         startGame={this.props.startGame}
@@ -42,7 +43,7 @@ App.propTypes = {
   angle: PropTypes.number.isRequired,
   gameState: PropTypes.shape({
     started: PropTypes.bool.isRequired,
-    kills: PropTypes.number.isRequired,
+    kills: PropTypes.number,
     lives: PropTypes.number.isRequired,
     flyingObjects: PropTypes.arrayOf(PropTypes.shape({
       position: PropTypes.shape({

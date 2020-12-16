@@ -2,9 +2,9 @@ import startGame from "./startGame";
 import moveObjects from "./moveObjects";
 import shoot from "./shoot";
 
-export const MOVE_OBJECTS = 'MOVE_OBJECTS';
-export const START_GAME = 'START_GAME';
-export const SHOOT = 'SHOOT';
+export const MOVE_OBJECTS = "MOVE_OBJECTS";
+export const START_GAME = "START_GAME";
+export const SHOOT = "SHOOT";
 
 const initialGameState = {
   started: false,
@@ -13,7 +13,7 @@ const initialGameState = {
   flyingObjects: [],
   lastObjectCreatedAt: new Date(),
   cannonBalls: [],
-}
+};
 
 const initialState = {
   angle: 45,
@@ -33,10 +33,13 @@ function reducer(state = initialState, action) {
   }
 }
 
-export const startGameAction = () => ({type: START_GAME});
+export const startGameAction = () => ({ type: START_GAME });
 
-export const moveObjectsAction = mousePosition => ({type: MOVE_OBJECTS, mousePosition});
+export const moveObjectsAction = (mousePosition) => ({
+  type: MOVE_OBJECTS,
+  mousePosition,
+});
 
-export const shootAction = (mousePosition) => ({type: SHOOT, mousePosition});
+export const shootAction = (mousePosition) => ({ type: SHOOT, mousePosition });
 
 export default reducer;

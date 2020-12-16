@@ -1,27 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import ballSvg from "./img/ball.svg";
 
 const CannonBall = (props) => {
+  const {
+    position: { x, y },
+  } = props;
   const ballStyle = {
-    fill: '#777',
-    stroke: '#444',
-    strokeWidth: '2px',
+    width: "50px",
+    height: "50px",
   };
+
   return (
-    <ellipse
-      style={ballStyle}
-      cx={props.position.x}
-      cy={props.position.y}
-      rx="16"
-      ry="16"
-    />
+    <g id="SKY">
+      <image style={ballStyle} x={x} y={y} rx="16" ry="16" href={ballSvg} />
+    </g>
   );
 };
 
 CannonBall.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
+    y: PropTypes.number.isRequired,
   }).isRequired,
 };
 

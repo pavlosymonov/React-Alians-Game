@@ -3,7 +3,7 @@ import {
   flyingObjectsStarterPositions
 } from '../utils/constants';
 
-export default function (state) {
+export default function createFlyingObjects (state) {
   if ( ! state.gameState.started) return state; // игра не запущена
 
   const now = (new Date()).getTime();
