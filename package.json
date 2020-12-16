@@ -1,6 +1,6 @@
 {
   "name": "ugame",
-  "hosmepage": "http://LeonidShv.github.io/React-Alians-Game",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
