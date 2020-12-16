@@ -1,6 +1,6 @@
 import React from "react";
 import { skyAndGroundWidth } from "../utils/constants";
-import mapSvg from "./img/background.svg";
+import mapJpg from "./img/space.jpg";
 
 const Sky = () => {
   const skyWidth = skyAndGroundWidth;
@@ -13,7 +13,7 @@ const Sky = () => {
         y={100 - gameHeight}
         width={skyWidth}
         height={gameHeight}
-        href={mapSvg}
+        href={mapJpg}
       />
     </g>
   );

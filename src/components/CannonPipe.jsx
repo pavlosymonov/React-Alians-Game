@@ -8,23 +8,12 @@ const CannonPipe = (props) => {
     fill: "#999",
     stroke: "#666",
     strokeWidth: "2px",
-    height: "100px",
+    height: "80px",
     width: "auto",
   };
   const transform = `rotate(${rotation + 80}, 0, 0)`;
-  let xCord = -210;
-  let yCord = -130;
-
-  if (rotation < -60) {
-    xCord = -210 - rotation;
-    yCord = -125 - rotation / 2;
-  } else if (rotation < 1) {
-    xCord = -200 - rotation;
-    yCord = -120 - rotation / 2;
-  } else if (rotation >= 1) {
-    xCord = -210 - rotation;
-    yCord = -130 + rotation / 2;
-  }
+  let xCord = -100;
+  let yCord = -60;
 
   return (
     <g id="base">

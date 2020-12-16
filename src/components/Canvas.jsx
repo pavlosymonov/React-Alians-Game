@@ -56,8 +56,8 @@ const Canvas = (props) => {
         />
       ))}
 
-      <CannonPipe rotation={angle} />
       <CannonBase />
+      <CannonPipe rotation={angle} />
       <CurrentScore score={kills} />
 
       { ! started &&
