@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { pathFromBezierCurve } from '../utils/formulas';
 
 const Heart = (props) => {
+  const { position: { x, y } } = props;
+
   const heartStyle = {
     fill: '#da0d15',
     stroke: '#a51708',
@@ -11,8 +13,8 @@ const Heart = (props) => {
 
   const leftSide = {
     initialAxis: {
-      x: props.position.x,
-      y: props.position.y,
+      x: x,
+      y: y,
     },
     initialControlPoint: {
       x: -20,
@@ -30,8 +32,8 @@ const Heart = (props) => {
 
   const rightSide = {
     initialAxis: {
-      x: props.position.x,
-      y: props.position.y,
+      x: x,
+      y: y,
     },
     initialControlPoint: {
       x: 20,

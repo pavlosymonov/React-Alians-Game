@@ -1,20 +1,21 @@
-import React from 'react';
-import {skyAndGroundWidth} from "../utils/constants";
+import React from "react";
+import { skyAndGroundWidth } from "../utils/constants";
+import mapSvg from "./img/background.svg";
 
 const Sky = () => {
-  const skyStyle = {
-    fill: '#30abef',
-  };
   const skyWidth = skyAndGroundWidth;
   const gameHeight = 1200;
+
   return (
-    <rect
-      style={skyStyle}
-      x={skyWidth / -2}
-      y={100 - gameHeight}
-      width={skyWidth}
-      height={gameHeight}
-    />
+    <g id="SKY">
+      <image
+        x={skyWidth / -2}
+        y={100 - gameHeight}
+        width={skyWidth}
+        height={gameHeight}
+        href={mapSvg}
+      />
+    </g>
   );
 };
 

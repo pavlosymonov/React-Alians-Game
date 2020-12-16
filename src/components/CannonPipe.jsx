@@ -1,51 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { pathFromBezierCurve } from '../utils/formulas';
+import React from "react";
+import PropTypes from "prop-types";
+import cannon from "./img/cannon.svg";
 
 const CannonPipe = (props) => {
-  const cannonPipeStyle = {
-    fill: '#999',
-    stroke: '#666',
-    strokeWidth: '2px',
+  const { rotation } = props;
+  let cannonPipeStyle = {
+    fill: "#999",
+    stroke: "#666",
+    strokeWidth: "2px",
+    height: "100px",
+    width: "auto",
   };
-  const transform = `rotate(${props.rotation}, 0, 0)`;
+  const transform = `rotate(${rotation + 80}, 0, 0)`;
+  let xCord = -210;
+  let yCord = -130;
 
-  const muzzleWidth = 40;
-  const halfMuzzle = 20;
-  const height = 100;
-  const yBasis = 70;
-
-  const cubicBezierCurve = {
-    initialAxis: {
-      x: -halfMuzzle,
-      y: -yBasis,
-    },
-    initialControlPoint: {
-      x: -40,
-      y: height * 1.7,
-    },
-    endingControlPoint: {
-      x: 80,
-      y: height * 1.7,
-    },
-    endingAxis: {
-      x: muzzleWidth,
-      y: 0,
-    },
-  };
+  if (rotation < -60) {
+    xCord = -210 - rotation;
+    yCord = -125 - rotation / 2;
+  } else if (rotation < 1) {
+    xCord = -200 - rotation;
+    yCord = -120 - rotation / 2;
+  } else if (rotation >= 1) {
+    xCord = -210 - rotation;
+    yCord = -130 + rotation / 2;
+  }
 
   return (
-    <g transform={transform}>
-      <path
+    <g id="base">
+      <image
+        transform={transform}
+        x={xCord}
+        y={yCord}
         style={cannonPipeStyle}
-        d={pathFromBezierCurve(cubicBezierCurve)}
-      />
-      <line
-        x1={-halfMuzzle}
-        y1={-yBasis}
-        x2={halfMuzzle}
-        y2={-yBasis}
-        style={cannonPipeStyle}
+        href={cannon}
       />
     </g>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { gameHeight } from '../utils/constants';
-import alien from "./alien.svg";
+import alien from "./img/alien.svg";
 
 const moveVertically = keyframes`
   0% {
@@ -17,13 +17,14 @@ const Move = styled.g`
   animation: ${moveVertically} 4s linear;
 `;
 
-const FlyingObject = props => (
-  <Move>
-    <image x={props.position.x} y={props.position.y} width="120" height="40" href={alien} />
-    {/*<FlyingObjectBase position={props.position} />*/}
-    {/*<FlyingObjectTop position={props.position} />*/}
-  </Move>
-);
+const FlyingObject = props => {
+  const { position: { x, y } } = props;
+  return (
+    <Move>
+      <image x={x} y={y} width="120" height="40" href={alien} />
+    </Move>
+  )
+};
 
 FlyingObject.propTypes = {
   position: PropTypes.shape({

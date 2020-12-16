@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sky from './Sky';
-import Ground from './Ground';
 import CannonBase from './CannonBase';
 import CannonPipe from './CannonPipe';
 import CurrentScore from './CurrentScore'
@@ -10,13 +9,23 @@ import StartGame from './StartGame';
 import Title from './Title';
 import CannonBall from "./CannonBall";
 import Heart from "./Heart";
+import './components/img/aim.svg';
+import './index.css';
 
 const Canvas = (props) => {
+  const {gameState: {
+    lives: livesProps,
+    cannonBalls,
+    started,
+    flyingObjects,
+    kills
+  },
+  trackMouse, shoot, angle, startGame} = props;
   const gameHeight = 1200;
   const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight];
   const lives = [];
 
-  for (let i = 0; i < props.gameState.lives; i++) {
+  for (let i = 0; i < livesProps; i++) {
     const heartPosition = {
       x: -180 - (i * 70),
       y: 35
@@ -28,9 +37,10 @@ const Canvas = (props) => {
     <svg
       id="aliens-go-home-canvas"
       preserveAspectRatio="xMaxYMax none"
-      onMouseMove={props.trackMouse}
+      onMouseMove={trackMouse}
       viewBox={viewBox}
-      onClick={props.shoot}
+      onClick={shoot}
+      className={started ? 'cursorAim' : null}
     >
       <defs>
         <filter id="shadow">
@@ -38,27 +48,26 @@ const Canvas = (props) => {
         </filter>
       </defs>
       <Sky />
-      <Ground />
 
-      {props.gameState.cannonBalls.map(cannonBall => (
+      {cannonBalls.map(cannonBall => (
         <CannonBall
           key={cannonBall.id}
           position={cannonBall.position}
         />
       ))}
 
-      <CannonPipe rotation={props.angle} />
+      <CannonPipe rotation={angle} />
       <CannonBase />
-      <CurrentScore score={15} />
+      <CurrentScore score={kills} />
 
-      { ! props.gameState.started &&
+      { ! started &&
       <g>
-        <StartGame onClick={() => props.startGame()} />
+        <StartGame onClick={() => startGame()} />
         <Title />
       </g>
       }
 
-      {props.gameState.flyingObjects.map(flyingObject => (
+      {flyingObjects.map(flyingObject => (
         <FlyingObject
           key={flyingObject.id}
           position={flyingObject.position}
@@ -72,8 +81,9 @@ const Canvas = (props) => {
 Canvas.propTypes = {
   angle: PropTypes.number.isRequired,
   gameState: PropTypes.shape({
+    cannonBalls: PropTypes.array,
     started: PropTypes.bool.isRequired,
-    kills: PropTypes.number.isRequired,
+    kills: PropTypes.number,
     lives: PropTypes.number.isRequired,
     flyingObjects: PropTypes.arrayOf(PropTypes.shape({
       position: PropTypes.shape({
