@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/React-Alians-Game/static/css/main.c5ff7f15.css",
+    "main.js": "/React-Alians-Game/static/js/main.2fbdd15f.js",
+    "static/media/space.jpg": "/React-Alians-Game/static/media/space.74ad889cc463f1045936.jpg",
+    "static/media/alien.svg": "/React-Alians-Game/static/media/alien.efdb4a7aaea22a04d21f6f172753fd2f.svg",
+    "static/media/ball.svg": "/React-Alians-Game/static/media/ball.97f2684e385538386d1c037469144a5d.svg",
+    "static/media/cannon.svg": "/React-Alians-Game/static/media/cannon.9bee7995f12781bfaef5f2299d082e07.svg",
+    "static/media/baseCannon.svg": "/React-Alians-Game/static/media/baseCannon.2d8493df3c145b1613f582e077b7cbe6.svg",
+    "static/media/aim.svg": "/React-Alians-Game/static/media/aim.aede010fabf4f059ca8c3a51a6738a4b.svg",
+    "index.html": "/React-Alians-Game/index.html",
+    "main.c5ff7f15.css.map": "/React-Alians-Game/static/css/main.c5ff7f15.css.map",
+    "main.2fbdd15f.js.map": "/React-Alians-Game/static/js/main.2fbdd15f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5ff7f15.css",
+    "static/js/main.2fbdd15f.js"
+  ]
+}
