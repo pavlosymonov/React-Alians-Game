@@ -1,17 +1,14 @@
 {
   "name": "ugame",
-  "homepage": ".",
+  "homepage": "https://pavlosymonov.github.io/React-Alians-Game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.5.0",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2",
-    "react-scripts": "4.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.3",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
@@ -43,11 +40,11 @@
     ]
   },
   "devDependencies": {
-    "css-loader": "^5.0.1",
-    "eslint": "^7.15.0",
-    "eslint-plugin-react": "^7.21.5",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
     "file-loader": "^6.2.0",
     "gh-pages": "^3.1.0",
-    "style-loader": "^2.0.0"
+    "style-loader": "^3.3.3"
   }
 }

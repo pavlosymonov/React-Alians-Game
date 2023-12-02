@@ -9,7 +9,7 @@ import StartGame from './StartGame';
 import Title from './Title';
 import CannonBall from "./CannonBall";
 import Heart from "./Heart";
-import './components/img/aim.svg';
+import './img/aim.svg';
 import './index.css';
 
 const Canvas = (props) => {

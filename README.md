@@ -1,1 +1,3 @@
-https://leonidshv.github.io/React-Alians-Game/
+# ReactJS based Alians Game
+
+https://pavlosymonov.github.io/React-Alians-Game/
